@@ -7,6 +7,7 @@
 	<meta name="description" content="Documentation for @turtlepay/utilities">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
 </head>
 <body>
 <header>
@@ -47,11 +48,6 @@
 	</div>
 	<div class="tsd-page-title">
 		<div class="container">
-			<ul class="tsd-breadcrumb">
-				<li>
-					<a href="globals.html">Globals</a>
-				</li>
-			</ul>
 			<h1>@turtlepay/utilities</h1>
 		</div>
 	</div>
@@ -93,39 +89,43 @@
 				<a href="#using-yarn" id="using-yarn" style="color: inherit; text-decoration: none;">
 					<h3>Using Yarn</h3>
 				</a>
-				<pre><code class="language-sh">yarn add @turtlepay/utilities</code></pre>
+				<pre><code class="language-sh"><span style="color: #000000">yarn add @turtlepay/utilities</span>
+</code></pre>
 				<a href="#using-npm" id="using-npm" style="color: inherit; text-decoration: none;">
 					<h3>Using NPM</h3>
 				</a>
-				<pre><code class="language-sh">npm install @turtlepay/utilities</code></pre>
+				<pre><code class="language-sh"><span style="color: #000000">npm install @turtlepay/utilities</span>
+</code></pre>
 				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
 					<h2>Usage</h2>
 				</a>
-				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { AES, PEM } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@turtlepay/utilities&#x27;</span>;
+				<pre><code class="language-typescript"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">AES</span><span style="color: #000000">, </span><span style="color: #001080">PEM</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@turtlepay/utilities&#039;</span><span style="color: #000000">;</span>
 
-(<span class="hljs-keyword">async</span>() =&gt; {
-    <span class="hljs-keyword">const</span> pem = <span class="hljs-keyword">new</span> PEM()
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000">() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">pem</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">PEM</span><span style="color: #000000">()</span>
+<span style="color: #000000">    </span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">keys</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">pem</span><span style="color: #000000">.</span><span style="color: #795E26">generateKeys</span><span style="color: #000000">();</span>
+<span style="color: #000000">    </span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">sig</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">pem</span><span style="color: #000000">.</span><span style="color: #795E26">sign</span><span style="color: #000000">({</span><span style="color: #001080">test:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;data&#039;</span><span style="color: #000000">}, </span><span style="color: #001080">keys</span><span style="color: #000000">.</span><span style="color: #001080">privateKey</span><span style="color: #000000">);</span>
 
-    <span class="hljs-keyword">const</span> keys = <span class="hljs-keyword">await</span> pem.generateKeys();
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">pem</span><span style="color: #000000">.</span><span style="color: #795E26">verify</span><span style="color: #000000">({</span><span style="color: #001080">test:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;data&#039;</span><span style="color: #000000">}, </span><span style="color: #001080">keys</span><span style="color: #000000">.</span><span style="color: #001080">publicKey</span><span style="color: #000000">, </span><span style="color: #001080">sig</span><span style="color: #000000">));</span>
+<span style="color: #000000">})</span>
 
-    <span class="hljs-keyword">const</span> sig = <span class="hljs-keyword">await</span> pem.sign({test: <span class="hljs-string">&#x27;data&#x27;</span>}, keys.privateKey);
+<span style="color: #000000">(</span><span style="color: #0000FF">async</span><span style="color: #000000">() </span><span style="color: #0000FF">=&gt;</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">aes</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">AES</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;password&#039;</span><span style="color: #000000">);</span>
 
-    <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">await</span> pem.verify({test: <span class="hljs-string">&#x27;data&#x27;</span>}, keys.publicKey, sig));
-})
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">secret</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">aes</span><span style="color: #000000">.</span><span style="color: #795E26">encrypt</span><span style="color: #000000">({</span><span style="color: #001080">test:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;data&#039;</span><span style="color: #000000">});</span>
 
-(<span class="hljs-keyword">async</span>() =&gt; {
-    <span class="hljs-keyword">const</span> aes = <span class="hljs-keyword">new</span> AES(<span class="hljs-string">&#x27;password&#x27;</span>);
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">data</span><span style="color: #000000"> = </span><span style="color: #AF00DB">await</span><span style="color: #000000"> </span><span style="color: #001080">aes</span><span style="color: #000000">.</span><span style="color: #795E26">decrypt</span><span style="color: #000000">&lt;{</span><span style="color: #001080">test</span><span style="color: #000000">: </span><span style="color: #267F99">string</span><span style="color: #000000">}&gt;(</span><span style="color: #001080">secret</span><span style="color: #000000">);</span>
 
-    <span class="hljs-keyword">const</span> secret = <span class="hljs-keyword">await</span> aes.encrypt({test: <span class="hljs-string">&#x27;data&#x27;</span>});
-
-    <span class="hljs-keyword">const</span> data = <span class="hljs-keyword">await</span> aes.decrypt&lt;{test: <span class="hljs-built_in">string</span>}&gt;(secret);
-
-    <span class="hljs-built_in">console</span>.log(data);
-})</code></pre>
+<span style="color: #000000">    </span><span style="color: #001080">console</span><span style="color: #000000">.</span><span style="color: #795E26">log</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">})</span>
+</code></pre>
 				<a href="#run-tests" id="run-tests" style="color: inherit; text-decoration: none;">
 					<h2>Run tests</h2>
 				</a>
-				<pre><code class="language-sh">yarn <span class="hljs-built_in">test</span></code></pre>
+				<pre><code class="language-sh"><span style="color: #000000">yarn </span><span style="color: #795E26">test</span>
+</code></pre>
 				<a href="#author" id="author" style="color: inherit; text-decoration: none;">
 					<h2>Author</h2>
 				</a>
@@ -153,8 +153,8 @@
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+					<li class=" ">
+						<a href="modules.html">Exports</a>
 					</li>
 				</ul>
 			</nav>
@@ -178,6 +178,9 @@
 			<ul class="tsd-legend">
 				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
 				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
 			</ul>
 		</div>
 	</div>
