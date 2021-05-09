@@ -1,6 +1,6 @@
 {
   "name": "@turtlepay/utilities",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "TurtlePay Utilities Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
