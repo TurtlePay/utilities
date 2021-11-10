@@ -8,7 +8,7 @@ import { createHmac } from 'crypto';
 /**
  * AES encryption/decryption wrapper
  */
-export class AES {
+export default class AES {
     private readonly m_key: Buffer;
 
     /**

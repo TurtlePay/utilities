@@ -8,7 +8,7 @@ import * as pem from 'pem';
 /**
  * PEM wrapper for generating key pairs, signing and verifying
  */
-export class PEM {
+export default class PEM {
     private readonly m_algorithm: string;
     private readonly m_keySize: number;
 

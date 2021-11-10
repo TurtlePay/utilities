@@ -2,5 +2,7 @@
 //
 // Please see the included LICENSE file for more information.
 
-export { AES } from './AES';
-export { PEM } from './PEM';
+import AES from './AES';
+import PEM from './PEM';
+
+export { AES, PEM };

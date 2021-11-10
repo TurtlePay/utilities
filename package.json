@@ -1,6 +1,6 @@
 {
   "name": "@turtlepay/utilities",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "TurtlePay Utilities Library",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,25 +31,25 @@
   },
   "homepage": "https://github.com/turtlepay/utilities#readme",
   "devDependencies": {
-    "@types/mocha": "^8.2.2",
-    "@types/node": "^15.0.2",
-    "@typescript-eslint/eslint-plugin": "^4.22.1",
-    "@typescript-eslint/parser": "^4.22.1",
-    "eslint": "^7.26.0",
-    "eslint-config-standard": "^16.0.2",
-    "eslint-plugin-import": "^2.22.1",
+    "@types/mocha": "^9.0.0",
+    "@types/node": "^16.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.3.1",
+    "@typescript-eslint/parser": "^5.3.1",
+    "eslint": "^8.2.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-promise": "^5.1.1",
     "eslint-plugin-standard": "^5.0.0",
-    "mocha": "^8.4.0",
-    "ts-node": "^9.1.1",
-    "typedoc": "^0.20.36",
-    "typedoc-plugin-no-inherit": "^1.2.2",
-    "typescript": "^4.2.4"
+    "mocha": "^9.1.3",
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.22.8",
+    "typedoc-plugin-no-inherit": "^1.3.1",
+    "typescript": "^4.4.4"
   },
   "dependencies": {
     "@types/aes-js": "^3.1.1",
-    "@types/pem": "^1.9.5",
+    "@types/pem": "^1.9.6",
     "aes-js": "^3.1.2",
     "pem": "^1.14.4"
   }
