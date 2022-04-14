@@ -1,9 +1,9 @@
-// Copyright (c) 2018-2020, The TurtlePay Developers
+// Copyright (c) 2018-2022, The TurtlePay Developers
 //
 // Please see the included LICENSE file for more information.
 
-import { ModeOfOperation, utils as AESUtils } from 'aes-js';
-import { createHmac } from 'crypto';
+import {ModeOfOperation, utils as AESUtils} from 'aes-js';
+import {createHmac} from 'crypto';
 
 /**
  * AES encryption/decryption wrapper
@@ -13,24 +13,26 @@ export default class AES {
 
     /**
      * Constructs a new instance of the wrapper
+     *
      * @param password the password for encryption/decryption
      */
-    constructor (password: string) {
+    constructor(password: string) {
         this.m_key = createHmac('sha256', password).digest();
     }
 
     /**
      * The HMAC key used for encryption/decryption
      */
-    public get key (): Buffer {
+    public get key(): Buffer {
         return this.m_key;
     }
 
     /**
      * Encrypts the given data into a hexadecimal string
+     *
      * @param data the data to encrypt
      */
-    public async encrypt<T> (data: T): Promise<string> {
+    public async encrypt<T>(data: T): Promise<string> {
         let _data: string;
 
         if (typeof data === 'string') {
@@ -51,9 +53,10 @@ export default class AES {
 
     /**
      * Decrypts the given encrypted hex string into the original data
+     *
      * @param encrypted the hexadecimal form of the encrypted bytes
      */
-    public async decrypt<T> (encrypted: string): Promise<T> {
+    public async decrypt<T>(encrypted: string): Promise<T> {
         const encryptedBytes = AESUtils.hex.toBytes(encrypted);
 
         // eslint-disable-next-line new-cap
